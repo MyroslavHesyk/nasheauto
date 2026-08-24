@@ -6,7 +6,7 @@
     <title>Мирослав | НАШЕ АВТО</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Unbounded:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXQTMBFZ11"></script>
     <script>
@@ -16,7 +16,6 @@
       gtag('config', 'G-SXQTMBFZ11');
     </script>
     <!-- Кінець GA4 -->
-
 </head>
 <body>
 
@@ -86,12 +85,10 @@
     <script>
         // Функція копіювання номера
         function copyPhone(number) {
-            // Використовуємо Clipboard API
             navigator.clipboard.writeText(number).then(() => {
                 alert('Номер ' + number + ' скопійовано!');
-                gtag('event', 'copy_phone'); // Відстеження в аналітиці
+                gtag('event', 'copy_phone');
             }).catch(err => {
-                // Резервний метод для старих браузерів
                 const textArea = document.createElement("textarea");
                 textArea.value = number;
                 document.body.appendChild(textArea);
@@ -108,16 +105,10 @@
             document.getElementById('tiktokTip').classList.remove('show');
         }
 
-        // Виявлення вбудованого браузера (TikTok, Instagram)
-        const userAgent = navigator.userAgent;
-        const isWebView = /TikTok|Instagram|FBAN|FBAV|Twitter/i.test(userAgent);
-
-        // Якщо це TikTok чи Інстаграм - показуємо підказку
-        if (isWebView) {
-            setTimeout(() => {
-                document.getElementById('tiktokTip').classList.add('show');
-            }, 1500); // Показуємо через 1.5 секунди після завантаження
-        }
+        // Показуємо підказку через 1 секунду після завантаження (без перевірки браузера)
+        setTimeout(() => {
+            document.getElementById('tiktokTip').classList.add('show');
+        }, 1000);
     </script>
 </body>
 </html>

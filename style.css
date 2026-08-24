@@ -1,4 +1,4 @@
-  :root {
+:root {
             --orange: #ff8c00;
             --dark-bg: #0a0a0a;
             --white: #ffffff;
@@ -211,7 +211,7 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.75);
             z-index: 9999;
-            display: none; /* Сховано за замовчуванням */
+            display: none;
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -239,7 +239,7 @@
             width: 100%;
             height: 100%;
             filter: drop-shadow(0 0 10px var(--orange));
-            transform: rotate(15deg); /* Нахил стрілки */
+            transform: rotate(15deg);
             animation: bounce 1s infinite alternate;
         }
         
@@ -271,7 +271,8 @@
             cursor: pointer;
             text-transform: uppercase;
         }
-          .footer {
+        
+        .footer {
             margin-top: 40px;
             font-size: 13px;
             color: #444;
