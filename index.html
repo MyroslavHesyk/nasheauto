@@ -6,7 +6,7 @@
     <title>Мирослав | НАШЕ АВТО</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Unbounded:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=1.2">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXQTMBFZ11"></script>
     <script>
@@ -18,22 +18,6 @@
     <!-- Кінець GA4 -->
 </head>
 <body>
-
-    <!-- Блок підказки для TikTok -->
-    <div id="tiktokTip" class="tiktok-overlay">
-        <div class="arrow-tip">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 10L85 35M85 35L65 15M85 35L50 65" stroke="#ff8c00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="85" cy="35" r="5" fill="#ff8c00"/>
-            </svg>
-        </div>
-        
-        <div class="tiktok-box">
-            <h3>Відкрийте в браузері</h3>
-            <p>Щоб кнопки працювали коректно, натисніть <b>три крапки</b> у верхньому правому куті та виберіть <b>«Відкрити в браузері»</b>.</p>
-            <button class="overlay-btn" onclick="closeTip()">Зрозуміло</button>
-        </div>
-    </div>
 
     <!-- Основний контент -->
     <div style="position: fixed; top: -100px; left: 50%; transform: translateX(-50%); width: 100%; height: 300px; background: radial-gradient(ellipse, rgba(255, 140, 0, 0.15), transparent); z-index: 1; pointer-events: none;"></div>
@@ -62,16 +46,47 @@
         </div>
 
         <div class="btn-group animate delay-4">
+            
             <a href="https://t.me/nasheauto" target="_blank" class="btn btn-telegram" onclick="gtag('event', 'telegram_channel')">🚗 Телеграм канал із авто</a>
             
             <a href="https://t.me/nasheauto_ua" target="_blank" class="btn btn-telegram" onclick="gtag('event', 'telegram_manager')">💬 Написати  в Телеграм</a>
             
             <!-- Кнопка дзвінка з копіюванням -->
             <a href="tel:+380637667788" class="btn btn-call" onclick="gtag('event', 'phone_call')">📞 Подзвонити: (063) 766-77-88</a>
-            <button class="copy-btn" onclick="copyPhone('+380637667788')">📋 Скопіювати номер телефону</button>
+           <!--  <button class="copy-btn" onclick="copyPhone('+380637667788')">📋 Якщо не дзвонить, натисніть тут, щоб скопіювати номер</button> -->
             
             <a href="viber://chat?number=%2B380637667788" class="btn btn-viber" onclick="gtag('event', 'viber')">✉️ Написати у Вайбер</a>
             
+            <!-- ІНСТРУКЦІЯ ДЛЯ TIKTOK -->
+            <div class="tiktok-instruction">
+                <div class="instruction-header">⚠️ Важливо! </div>
+                <div class="instruction-text">
+                    Ви відкрили це посилання <b>всередині ТікТоку</b>. <br> У ньому кнопки працюють некоректно.
+                </div>
+                
+                <div class="instruction-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">Знайдіть у <b>верхньому правому куті</b> екрана <b>три крапки</b> (⋯). Ось вони:</div>
+                </div>
+                
+                <div class="dots-illustration">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">Натисніть на ці три крапки і в меню оберіть <b>«Відкрити в браузері»</b> (або «Відкрити у зовнішньому браузері»).</div>
+                </div>
+
+                <div class="instruction-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">Після цього всі кнопки запрацюють автоматично!</div>
+                </div>
+                
+               
+            </div>
+            <!-- КІНЕЦЬ ІНСТРУКЦІЇ -->
+
             <a href="https://maps.app.goo.gl/y6iyE5VquvzRgzM96" target="_blank" class="btn btn-map" onclick="gtag('event', 'google_maps')">📍 Побудувати маршрут (Google Maps)</a>
         </div>
 
@@ -99,16 +114,6 @@
                 gtag('event', 'copy_phone');
             });
         }
-
-        // Функція закриття підказки
-        function closeTip() {
-            document.getElementById('tiktokTip').classList.remove('show');
-        }
-
-        // Показуємо підказку через 1 секунду після завантаження (без перевірки браузера)
-        setTimeout(() => {
-            document.getElementById('tiktokTip').classList.add('show');
-        }, 1000);
     </script>
 </body>
 </html>
