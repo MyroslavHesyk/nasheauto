@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мирослав | НАШЕ АВТО</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:ital,wght@1,600&family=Unbounded:wght@700&display=swap" rel="stylesheet">
-   <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXQTMBFZ11"></script>
     <script>
@@ -54,7 +54,7 @@
 
         /* Логотип */
         .logo {
-            width: 210px;
+            width: 200px;
             margin-top: 10px;
             filter: drop-shadow(0 4px 10px rgba(255, 140, 0, 0.3));
         }
@@ -63,19 +63,18 @@
         .profile-wrapper {
             position: relative;
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 25px;
         }
         
         .profile {
-            width: 170px;
-            height: 170px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--orange);
             box-shadow: 0 0 40px rgba(255, 140, 0, 0.4);
         }
         
-        /* Кільце, що обертається навколо фото */
         .orbit {
             position: absolute;
             top: -8px; left: -8px; right: -8px; bottom: -8px;
@@ -88,9 +87,9 @@
 
         .name {
             font-family: 'Unbounded', cursive;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
-            margin: 20px 0 5px 0;
+            margin: 18px 0 5px 0;
             letter-spacing: 2px;
             text-transform: uppercase;
             background: linear-gradient(90deg, #fff, #ff9900, #fff);
@@ -103,7 +102,7 @@
         .quote {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 20px;
+            font-size: 19px;
             color: #ddd;
             margin: 10px auto 25px;
             max-width: 90%;
@@ -113,16 +112,15 @@
         
         .quote::before {
             content: '"';
-            font-size: 60px;
+            font-size: 50px;
             color: var(--orange);
             position: absolute;
-            top: -30px;
-            left: -20px;
+            top: -25px;
+            left: -15px;
             opacity: 0.5;
             font-family: serif;
         }
 
-        /* Послуги та адреса */
         .services {
             font-size: 16px;
             font-weight: 700;
@@ -135,33 +133,33 @@
         .address {
             font-size: 15px;
             color: #aaa;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         /* Кнопки */
         .btn-group {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 18px;
+            padding: 16px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 18px;
+            font-size: 17px;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             border: 2px solid transparent;
+            position: relative;
         }
 
         .btn:active { transform: scale(0.97); }
         
-        /* Кнопка Телеграм (Основний акцент) */
         .btn-telegram {
             background: linear-gradient(45deg, #ff9900, #ff6a00);
             color: #111;
@@ -172,7 +170,6 @@
             box-shadow: 0 10px 30px rgba(255, 153, 0, 0.6);
         }
         
-        /* Кнопка Дзвінок */
         .btn-call {
             background: #ffffff;
             color: #111;
@@ -183,7 +180,6 @@
             box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
         }
         
-        /* Кнопка Вайбер */
         .btn-viber {
             background: transparent;
             color: #fff;
@@ -194,7 +190,6 @@
             transform: translateY(-3px);
         }
 
-        /* Кнопка Карта */
         .btn-map {
             background: transparent;
             color: #fff;
@@ -205,46 +200,127 @@
             transform: translateY(-3px);
         }
 
-        /* Ефект світіння за кнопками */
-        .btn-glow {
-            position: relative;
-            overflow: hidden;
+        /* Кнопка копіювання номера (маленька) */
+        .copy-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
         }
-        .btn-glow::after {
-            content: '';
+        .copy-btn {
+            background: rgba(255, 140, 0, 0.2);
+            color: #fff;
+            border: 1px solid var(--orange);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Manrope', sans-serif;
+        }
+        .copy-btn:hover {
+            background: var(--orange);
+            color: #111;
+        }
+        
+        /* Оверлей для TikTok */
+        .tiktok-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            display: none; /* Сховано за замовчуванням */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .tiktok-overlay.show {
+            display: flex;
+        }
+
+        /* Стрілка, що вказує вгору-вправо */
+        .arrow-tip {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to bottom right, rgba(255,255,255,0.2), transparent);
-            transform: rotate(45deg);
-            transition: 0.5s;
+            top: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            pointer-events: none;
         }
-        .btn-glow:hover::after {
-            transform: translate(-50%, -50%) rotate(45deg);
+        
+        .arrow-tip svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 10px var(--orange));
+            transform: rotate(15deg); /* Нахил стрілки */
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0) rotate(15deg); }
+            to { transform: translateY(-10px) rotate(15deg); }
         }
 
-        .footer {
-            margin-top: 40px;
-            font-size: 13px;
-            color: #444;
-            letter-spacing: 1px;
+        .tiktok-box {
+            background: #1e1e1e;
+            padding: 30px 20px;
+            border-radius: 15px;
+            max-width: 320px;
+            border-bottom: 5px solid var(--orange);
+            margin-top: 50px;
+        }
+        
+        .tiktok-box h3 { color: var(--orange); margin: 0 0 15px 0; font-size: 20px; }
+        .tiktok-box p { font-size: 16px; line-height: 1.5; margin-bottom: 20px; color: #ccc; }
+        
+        .overlay-btn {
+            background: var(--orange);
+            color: #111;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            text-transform: uppercase;
         }
 
-        /* Адаптивність (мобільна версія) */
+        /* Медіа запити */
         @media (max-width: 480px) {
-            .profile { width: 150px; height: 150px; }
-            .name { font-size: 22px; }
-            .quote { font-size: 18px; }
-            .btn { font-size: 16px; padding: 15px; }
+            .profile { width: 140px; height: 140px; }
+            .name { font-size: 20px; }
+            .quote { font-size: 17px; }
+            .btn { font-size: 16px; padding: 14px; }
+            .arrow-tip { top: 20px; right: 20px; width: 100px; height: 100px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Ефект помаранчевого світіння зверху -->
-    <div style="position: fixed; top: -100px; left: 50%; transform: translateX(-50%); width: 100%; height: 300px; background: radial-gradient(ellipse, rgba(255, 140, 0, 0.15), transparent); z-index: 1; pointer-events: none;"></div>
+    <!-- Блок підказки для TikTok -->
+    <div id="tiktokTip" class="tiktok-overlay">
+        <div class="arrow-tip">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10L85 35M85 35L65 15M85 35L50 65" stroke="#ff8c00" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="85" cy="35" r="5" fill="#ff8c00"/>
+            </svg>
+        </div>
+        
+        <div class="tiktok-box">
+            <h3>Відкрийте в браузері</h3>
+            <p>Щоб кнопки працювали коректно, натисніть <b>три крапки</b> у верхньому правому куті та виберіть <b>«Відкрити в браузері»</b>.</p>
+            <button class="overlay-btn" onclick="closeTip()">Зрозуміло</button>
+        </div>
+    </div>
+
+    <!-- Основний контент -->
+    <div style="position: fixed; top: -100px; left: 50%; transform: translateX(-50%); width: 80%; height: 300px; background: radial-gradient(ellipse, rgba(255, 140, 0, 0.15), transparent); z-index: 1; pointer-events: none;"></div>
 
     <div class="container">
         
@@ -270,15 +346,17 @@
         </div>
 
         <div class="btn-group animate delay-4">
-            <a href="https://t.me/nasheauto" class="btn btn-telegram btn-glow" onclick="gtag('event', 'telegram_channel')">🚗 Телеграм канал із авто</a>
+            <a href="https://t.me/nasheauto" target="_blank" class="btn btn-telegram" onclick="gtag('event', 'telegram_channel')">🚗 Телеграм канал із авто</a>
             
-            <a href="https://t.me/nasheauto_ua" class="btn btn-telegram btn-glow" onclick="gtag('event', 'telegram_manager')">💬 Написати в Телеграм</a>
+            <a href="https://t.me/nasheauto_ua" target="_blank" class="btn btn-telegram" onclick="gtag('event', 'telegram_manager')">💬 Написати  в Телеграм</a>
             
-            <a href="tel:+380637667788" class="btn btn-call btn-glow" onclick="gtag('event', 'phone_call')">📞 Подзвонити: (063) 766-77-88</a>
+            <!-- Кнопка дзвінка з копіюванням -->
+            <a href="tel:+380637667788" class="btn btn-call" onclick="gtag('event', 'phone_call')">📞 Подзвонити: (063) 766-77-88</a>
+            <button class="copy-btn" onclick="copyPhone('+380637667788')">📋 Скопіювати номер телефону</button>
             
-            <a href="viber://chat?number=%2B380637667788" class="btn btn-viber btn-glow" onclick="gtag('event', 'viber')">✉️ Написати у Вайбер</a>
+            <a href="viber://chat?number=%2B380637667788" class="btn btn-viber" onclick="gtag('event', 'viber')">✉️ Написати у Вайбер</a>
             
-            <a href="https://maps.app.goo.gl/y6iyE5VquvzRgzM96" class="btn btn-map btn-glow" onclick="gtag('event', 'google_maps')">📍 Побудувати маршрут (Google Maps)</a>
+            <a href="https://maps.app.goo.gl/y6iyE5VquvzRgzM96" target="_blank" class="btn btn-map" onclick="gtag('event', 'google_maps')">📍 Побудувати маршрут (Google Maps)</a>
         </div>
 
         <div class="footer animate delay-4">
@@ -286,5 +364,43 @@
         </div>
         
     </div>
+
+    <!-- Скрипти -->
+    <script>
+        // Функція копіювання номера
+        function copyPhone(number) {
+            // Використовуємо Clipboard API
+            navigator.clipboard.writeText(number).then(() => {
+                alert('Номер ' + number + ' скопійовано!');
+                gtag('event', 'copy_phone'); // Відстеження в аналітиці
+            }).catch(err => {
+                // Резервний метод для старих браузерів
+                const textArea = document.createElement("textarea");
+                textArea.value = number;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textArea);
+                alert('Номер ' + number + ' скопійовано!');
+                gtag('event', 'copy_phone');
+            });
+        }
+
+        // Функція закриття підказки
+        function closeTip() {
+            document.getElementById('tiktokTip').classList.remove('show');
+        }
+
+        // Виявлення вбудованого браузера (TikTok, Instagram)
+        const userAgent = navigator.userAgent;
+        const isWebView = /TikTok|Instagram|FBAN|FBAV|Twitter/i.test(userAgent);
+
+        // Якщо це TikTok чи Інстаграм - показуємо підказку
+        if (isWebView) {
+            setTimeout(() => {
+                document.getElementById('tiktokTip').classList.add('show');
+            }, 1500); // Показуємо через 1.5 секунди після завантаження
+        }
+    </script>
 </body>
 </html>
